@@ -12,7 +12,7 @@ struct ConfirmPasscodeState: PasscodeLockStateType {
     
     let title: String
     let description: String
-    let isCancellableAction = true
+    var isCancellableAction = true
     var isTouchIDAllowed = false
     
     fileprivate var passcodeToConfirm: [String]
