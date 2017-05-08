@@ -29,7 +29,8 @@ struct SetPasscodeState: PasscodeLockStateType {
     
     func acceptPasscode(_ passcode: [String], fromLock lock: PasscodeLockType) {
         
-        let nextState = ConfirmPasscodeState(passcode: passcode)
+        var nextState = ConfirmPasscodeState(passcode: passcode)
+        nextState.isCancellableAction = false
         
         lock.changeStateTo(nextState)
     }
